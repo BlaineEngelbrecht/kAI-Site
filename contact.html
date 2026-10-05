@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | kAI Automation Industries</title>
+<meta name="description" content="Book a free consultation with kAI. Tell us where you lose time or customers and we will show you what to automate.">
+<link rel="stylesheet" href="styles.css">
+<style>
+.get-started-page{position:relative;overflow:hidden;background:#fff;}
+.get-started-watermark{position:fixed;top:50%;left:50%;width:min(92vmin,880px);height:min(92vmin,880px);transform:translate(-50%,-50%);background:url("assets/kai-logo-watermark.png") center/contain no-repeat;opacity:.075;filter:grayscale(1);-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);pointer-events:none;z-index:0;}
+.get-started-page > *:not(.get-started-watermark){position:relative;z-index:1;}
+.get-started-hero{background:rgba(246,244,241,.72);border-bottom:1px solid var(--line);padding:64px 0 56px;}
+.get-started-hero h1{font-size:clamp(34px,5.5vw,56px);max-width:15ch;}
+.get-started-hero p{margin-top:16px;max-width:52ch;color:var(--quiet);font-size:18px;}
+.get-started-main{padding:48px 0 80px;}
+.get-started-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:start;}
+.get-started-form{border:1px solid var(--line);border-radius:10px;padding:36px;background:rgba(255,255,255,.72);}
+.get-started-form h2{font-size:28px;margin-bottom:6px;}
+.get-started-form .sub{color:var(--quiet);margin-bottom:26px;}
+.gs-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.gs-field{margin-bottom:18px;}
+.gs-field label,.gs-fieldset legend{display:block;font-size:14px;font-weight:600;margin-bottom:7px;}
+.gs-field input,.gs-field textarea{width:100%;font:inherit;padding:13px 14px;border:1px solid #cfcbc5;border-radius:6px;background:#fff;color:var(--ink);}
+.gs-field textarea{min-height:120px;resize:vertical;}
+.gs-field input:focus,.gs-field textarea:focus{outline:3px solid rgba(196,22,28,.25);border-color:var(--maroon);}
+.gs-fieldset{border:0;padding:0;margin:0 0 18px;}
+.gs-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.gs-chips label{margin:0;font-weight:500;cursor:pointer;}
+.gs-chips input{position:absolute;opacity:0;pointer-events:none;}
+.gs-chips span{display:inline-block;padding:9px 14px;border:1px solid #cfcbc5;border-radius:999px;font-size:14px;transition:.15s;}
+.gs-chips input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink);}
+.gs-chips input:focus-visible+span{outline:3px solid rgba(196,22,28,.35);}
+.gs-hp{position:absolute;left:-9999px;}
+.gs-submit{font:600 16px Inter,system-ui,sans-serif;background:var(--maroon);color:#fff;border:0;border-radius:6px;padding:15px 26px;cursor:pointer;width:100%;}
+.gs-submit:hover{background:#c4161c;}
+.gs-submit:disabled{opacity:.6;cursor:wait;}
+.gs-note{font-size:13px;color:var(--quiet);margin-top:12px;text-align:center;}
+#gs-status{margin-top:14px;padding:12px 14px;border-radius:6px;font-size:14px;display:none;}
+#gs-status.ok{display:block;background:#e9f6ec;color:#14532d;}
+#gs-status.err{display:block;background:#fdecec;color:#7f1d1d;}
+.get-started-aside{padding:8px 0 0;position:sticky;top:24px;}
+.get-started-aside h2{font-size:34px;}
+.get-started-aside>p{color:var(--quiet);margin:14px 0 26px;font-size:17px;}
+.gs-prices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px;}
+.gs-price{background:rgba(246,244,241,.78);border-radius:8px;padding:16px;}
+.gs-price small{display:block;color:var(--quiet);font-size:13px;}
+.gs-price b{display:block;font:700 28px "Space Grotesk",sans-serif;margin:4px 0;color:var(--maroon);}
+.get-started-aside h3{font-size:18px;margin-bottom:14px;}
+.gs-steps{list-style:none;padding:0;margin-bottom:30px;}
+.gs-steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);color:var(--quiet);font-size:15px;}
+.gs-steps li strong{color:var(--ink);display:block;}
+.gs-steps li i{font:700 14px "Space Grotesk",sans-serif;font-style:normal;color:var(--signal);}
+.gs-steps li:last-child{border-bottom:1px solid var(--line);}
+.gs-direct{padding-top:6px;font-size:15px;color:var(--quiet);}
+.gs-direct a{color:var(--ink);font-weight:600;}
+.gs-wa{display:inline-block;margin:6px 0 14px;background:var(--ink);color:#fff!important;padding:11px 18px;border-radius:6px;text-decoration:none;}
+@media(max-width:860px){.get-started-grid{grid-template-columns:1fr}.get-started-aside{position:static}}
+@media(max-width:520px){.gs-row{grid-template-columns:1fr}.get-started-form{padding:24px}.gs-prices{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body class="get-started-page">
+<div class="get-started-watermark" aria-hidden="true"></div>
+<header class="site-header">
+<nav class="nav">
+<a href="index.html" class="nav-brand"><img src="assets/kai-logo.png" alt="kAI Automation Industries logo"></a>
+<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+<ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="story.html">Our Story</a></li><li><a href="services.html">Services</a></li><li><a href="clients.html">Clients</a></li><li><a href="contact.html" aria-current="page" class="nav-cta">Get Started</a></li></ul>
+</nav>
+</header>
+<section class="get-started-hero"><div class="container">
+<h1>Let's find where you're losing customers.</h1>
+<p>Tell us about your business. We'll show you what to automate and what it would cost, in a free consultation.</p>
+</div></section>
+<main class="get-started-main"><div class="container get-started-grid">
+<section class="get-started-form" aria-labelledby="gs-form-title">
+<h2 id="gs-form-title">Book your free consultation</h2>
+<p class="sub">Takes about a minute. No obligation.</p>
+<form id="gs-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<div class="gs-row">
+<div class="gs-field"><label for="gs-name">Full name</label><input id="gs-name" name="name" type="text" autocomplete="name" required></div>
+<div class="gs-field"><label for="gs-biz">Business name</label><input id="gs-biz" name="business" type="text" autocomplete="organization" required></div>
+</div>
+<div class="gs-row">
+<div class="gs-field"><label for="gs-email">Email</label><input id="gs-email" name="email" type="email" autocomplete="email" required></div>
+<div class="gs-field"><label for="gs-tel">WhatsApp number</label><input id="gs-tel" name="whatsapp" type="tel" autocomplete="tel" placeholder="Optional"></div>
+</div>
+<fieldset class="gs-fieldset"><legend>What are you interested in?</legend><div class="gs-chips">
+<label><input type="checkbox" name="interest" value="WhatsApp automation"><span>WhatsApp automation</span></label>
+<label><input type="checkbox" name="interest" value="Multi-channel"><span>Facebook &amp; Instagram</span></label>
+<label><input type="checkbox" name="interest" value="Booking and ordering"><span>Booking &amp; ordering</span></label>
+<label><input type="checkbox" name="interest" value="Website"><span>A website</span></label>
+<label><input type="checkbox" name="interest" value="Custom"><span>Something custom</span></label>
+</div></fieldset>
+<div class="gs-field"><label for="gs-msg">Where are you losing time or customers?</label><textarea id="gs-msg" name="message" placeholder="For example: I answer the same questions every night, and bookings are all done by phone."></textarea></div>
+<input class="gs-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button id="gs-btn" class="gs-submit" type="submit">Send my enquiry</button>
+<div id="gs-status" role="status"></div>
+<p class="gs-note">We'll only use your details to reply to this enquiry.</p>
+</form>
+</section>
+<aside class="get-started-aside">
+<h2>Start with the problem.</h2>
+<p>Tell us where time or revenue is being lost. We'll show you what could be automated and what the system would look like.</p>
+<div class="gs-prices"><div class="gs-price"><small>AI setup from</small><b>R2,000</b><small>Retainer from R399</small></div><div class="gs-price"><small>Website setup from</small><b>R2,500</b><small>Retainer from R299</small></div></div>
+<h3>What happens next</h3>
+<ol class="gs-steps"><li><i>1</i><span><strong>We reply</strong>and book a short consultation.</span></li><li><i>2</i><span><strong>We scope it</strong>and send a clear quote.</span></li><li><i>3</i><span><strong>You go live</strong>in 8 to 10 days.</span></li></ol>
+<div class="gs-direct">Prefer to talk now?<br><a class="gs-wa" href="https://wa.me/27000000000">Message us on WhatsApp</a><br><a href="mailto:hello@kaiautomation.co.za">hello@kaiautomation.co.za</a><br>Durban, South Africa</div>
+</aside>
+</div></main>
+<footer class="site-footer">
+<div class="container"><div class="footer-top"><div class="footer-brand"><img src="assets/kai-logo.png" alt="kAI Automation Industries logo"></div><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="story.html">Our Story</a></li><li><a href="services.html">Services</a></li><li><a href="clients.html">Clients</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-bottom"><span>&copy; <span id="year"></span> kAI Automation Industries (PTY) LTD</span><span>WhatsApp &amp; Facebook &amp; Instagram &amp; Web</span></div></div>
+</footer>
+<div class="kai-widget" id="kaiWidget"><div class="kai-widget-panel"><div class="kai-widget-header"><span class="dot"></span><div><div class="title">kAI Assistant</div><div class="sub">Typically replies in seconds</div></div></div><div class="kai-widget-body"><div class="bubble in">Hi, I'm the kAI assistant. Ask me about pricing, channels, or booking a demo.</div></div><div class="kai-widget-quick"><button class="kai-chip" data-key="pricing">What does it cost?</button><button class="kai-chip" data-key="channels">Which platforms?</button><button class="kai-chip" data-key="demo">Book a demo</button><button class="kai-chip" data-key="human">Talk to a human</button></div></div><button class="kai-widget-btn" aria-label="Open kAI assistant">&#128172;</button></div>
+<script src="script.js"></script>
+<script>
+const gsForm=document.getElementById('gs-form'),gsBtn=document.getElementById('gs-btn'),gsStatus=document.getElementById('gs-status');
+gsForm.addEventListener('submit',async e=>{e.preventDefault();gsStatus.className='';gsStatus.textContent='';if(gsForm.action.includes('YOUR_FORM_ID')){gsStatus.className='err';gsStatus.textContent='This form is not connected yet. Add your Formspree form ID to the form action.';return;}gsBtn.disabled=true;gsBtn.textContent='Sending...';try{const r=await fetch(gsForm.action,{method:'POST',body:new FormData(gsForm),headers:{Accept:'application/json'}});if(!r.ok)throw 0;gsForm.reset();gsStatus.className='ok';gsStatus.textContent='Thank you. We have your enquiry and will be in touch soon.';}catch(_){gsStatus.className='err';gsStatus.textContent='Something went wrong. Please message us on WhatsApp or email instead.';}gsBtn.disabled=false;gsBtn.textContent='Send my enquiry';});
+</script>
+</body></html>
