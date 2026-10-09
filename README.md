@@ -1,4 +1,3 @@
-
 # kAI Automation Industries website
 
 Updated website based on the supplied kAI Website specification document and the original Claude site.
@@ -13,4 +12,3 @@ Updated website based on the supplied kAI Website specification document and the
 Extract this folder and replace the corresponding files in the GitHub repository. Keep the folder structure intact, especially `assets/`.
 
 Then commit and push the changes to GitHub.
-

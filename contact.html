@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Started | kAI Automation Industries</title>
-<meta name="description" content="Book a free consultation with kAI. Tell us where you lose time or customers and we will show you what to automate.">
+<meta name="description" content="Book a free consultation with kAI. Tell us where you lose time or customers and we will show you what to automate."><meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="styles.css">
 <style>
 .get-started-page{position:relative;overflow:hidden;background:#fff;}
@@ -57,13 +57,25 @@
 .gs-wa{display:inline-block;margin:6px 0 14px;background:var(--ink);color:#fff!important;padding:11px 18px;border-radius:6px;text-decoration:none;}
 @media(max-width:860px){.get-started-grid{grid-template-columns:1fr}.get-started-aside{position:static}}
 @media(max-width:520px){.gs-row{grid-template-columns:1fr}.get-started-form{padding:24px}.gs-prices{grid-template-columns:1fr 1fr}}
-</style>
-<style>
-html, body { height: auto !important; min-height: 100%; overflow-y: auto !important; }
-main, section, .container { height: auto !important; max-height: none !important; overflow: visible !important; }
+
+/* Consent gate */
+.gs-consent-backdrop{position:fixed;inset:0;background:rgba(11,13,16,.82);display:flex;align-items:center;justify-content:center;padding:20px;z-index:9999;backdrop-filter:blur(5px)}
+.gs-consent-modal{width:min(680px,100%);max-height:min(90vh,760px);overflow:auto;background:#fff;border-radius:14px;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,.35)}
+.gs-consent-modal .eyebrow{margin-bottom:10px}.gs-consent-modal h2{font-size:clamp(25px,4vw,34px);margin-bottom:12px}.gs-consent-modal p{color:var(--quiet);line-height:1.65;margin-bottom:14px}.gs-consent-box{background:#f6f4f1;border:1px solid var(--line);border-radius:8px;padding:16px;margin:18px 0}.gs-consent-actions{display:flex;gap:12px;justify-content:flex-end;align-items:center;margin-top:22px}.gs-consent-accept{font:600 15px Inter,system-ui,sans-serif;background:var(--maroon);color:#fff;border:0;border-radius:6px;padding:12px 22px;cursor:pointer}.gs-consent-accept:hover{background:#c4161c}.gs-consent-decline{font:600 15px Inter,system-ui,sans-serif;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:11px 20px;cursor:pointer}.gs-success{display:flex;align-items:center;gap:10px}.gs-success-icon{display:inline-flex;width:28px;height:28px;border-radius:50%;align-items:center;justify-content:center;background:#198754;color:#fff;font-weight:800}
+@media(max-width:520px){.gs-consent-modal{padding:24px}.gs-consent-actions{flex-direction:column-reverse;align-items:stretch}.gs-consent-accept,.gs-consent-decline{width:100%}.hero-contact{font-size:13px}}
 </style>
 </head>
 <body class="get-started-page">
+<div class="gs-consent-backdrop" id="gs-consent" role="dialog" aria-modal="true" aria-labelledby="gs-consent-title">
+<div class="gs-consent-modal">
+<div class="eyebrow">Before you get started</div>
+<h2 id="gs-consent-title">Your information, kept safe.</h2>
+<p>To use the Get Started form, please accept our terms for collecting and using your information. We collect the details you choose to provide so that kAI Automation Industries can understand your enquiry, contact you about the services you requested, prepare proposals or quotations, and provide relevant business support.</p>
+<div class="gs-consent-box"><p><strong>How we use your information:</strong> Your information is used for legitimate business purposes connected to your enquiry. It may be accessed or shared only with the relevant people, systems, service providers, or communication channels required to respond to and manage your enquiry. We take reasonable steps to keep the information secure and do not use it for unrelated purposes.</p><p><strong>By selecting Accept &amp; Continue,</strong> you confirm that you have read and understood this notice and agree to kAI Automation Industries collecting, storing, processing, and using the information you submit for the purposes described above.</p></div>
+<div class="gs-consent-actions"><button type="button" class="gs-consent-decline" id="gs-consent-decline">Decline and return</button><button type="button" class="gs-consent-accept" id="gs-consent-accept">Accept &amp; Continue</button></div>
+</div>
+</div>
+
 <div class="get-started-watermark" aria-hidden="true"></div>
 <header class="site-header">
 <nav class="nav">
@@ -99,7 +111,7 @@ main, section, .container { height: auto !important; max-height: none !important
 <div class="gs-field"><label for="gs-msg">Where are you losing time or customers?</label><textarea id="gs-msg" name="message" placeholder="For example: I answer the same questions every night, and bookings are all done by phone."></textarea></div>
 <input class="gs-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button id="gs-btn" class="gs-submit" type="submit">Send my enquiry</button>
-<div id="gs-status" role="status"></div>
+<div id="gs-status" role="status" aria-live="polite"></div>
 <p class="gs-note">We'll only use your details to reply to this enquiry.</p>
 </form>
 </section>
@@ -109,7 +121,7 @@ main, section, .container { height: auto !important; max-height: none !important
 <div class="gs-prices"><div class="gs-price"><small>AI setup from</small><b>R2,000</b><small>Retainer from R399</small></div><div class="gs-price"><small>Website setup from</small><b>R2,500</b><small>Retainer from R299</small></div></div>
 <h3>What happens next</h3>
 <ol class="gs-steps"><li><i>1</i><span><strong>We reply</strong>and book a short consultation.</span></li><li><i>2</i><span><strong>We scope it</strong>and send a clear quote.</span></li><li><i>3</i><span><strong>You go live</strong>in 8 to 10 days.</span></li></ol>
-<div class="gs-direct">Prefer to talk now?<br><a class="gs-wa" href="https://wa.me/27000000000">Message us on WhatsApp</a><br><a href="mailto:hello@kaiautomation.co.za">hello@kaiautomation.co.za</a><br>Durban, South Africa</div>
+<div class="gs-direct">Prefer to talk now?<br><a class="gs-wa" href="https://wa.me/27712864551">WhatsApp: +27 71 286 4551</a><br><a href="tel:+27712864551">+27 71 286 4551</a><br><a href="mailto:kai.automation.industries@gmail.com">kai.automation.industries@gmail.com</a><br>Durban, South Africa</div>
 </aside>
 </div></main>
 <footer class="site-footer">
@@ -118,7 +130,32 @@ main, section, .container { height: auto !important; max-height: none !important
 <div class="kai-widget" id="kaiWidget"><div class="kai-widget-panel"><div class="kai-widget-header"><span class="dot"></span><div><div class="title">kAI Assistant</div><div class="sub">Typically replies in seconds</div></div></div><div class="kai-widget-body"><div class="bubble in">Hi, I'm the kAI assistant. Ask me about pricing, channels, or booking a demo.</div></div><div class="kai-widget-quick"><button class="kai-chip" data-key="pricing">What does it cost?</button><button class="kai-chip" data-key="channels">Which platforms?</button><button class="kai-chip" data-key="demo">Book a demo</button><button class="kai-chip" data-key="human">Talk to a human</button></div></div><button class="kai-widget-btn" aria-label="Open kAI assistant">&#128172;</button></div>
 <script src="script.js"></script>
 <script>
+const consent=document.getElementById('gs-consent');
+const accept=document.getElementById('gs-consent-accept');
+const decline=document.getElementById('gs-consent-decline');
+function lockPage(){document.documentElement.style.overflow='hidden';}
+function unlockPage(){document.documentElement.style.overflow='';consent.remove();}
+lockPage();
+accept.addEventListener('click',unlockPage);
+decline.addEventListener('click',()=>{window.location.href='index.html';});
+
 const gsForm=document.getElementById('gs-form'),gsBtn=document.getElementById('gs-btn'),gsStatus=document.getElementById('gs-status');
-gsForm.addEventListener('submit',async e=>{e.preventDefault();gsStatus.className='';gsStatus.textContent='';if(gsForm.action.includes('YOUR_FORM_ID')){gsStatus.className='err';gsStatus.textContent='This form is not connected yet. Add your Formspree form ID to the form action.';return;}gsBtn.disabled=true;gsBtn.textContent='Sending...';try{const r=await fetch(gsForm.action,{method:'POST',body:new FormData(gsForm),headers:{Accept:'application/json'}});if(!r.ok)throw 0;gsForm.reset();gsStatus.className='ok';gsStatus.textContent='Thank you. We have your enquiry and will be in touch soon.';}catch(_){gsStatus.className='err';gsStatus.textContent='Something went wrong. Please message us on WhatsApp or email instead.';}gsBtn.disabled=false;gsBtn.textContent='Send my enquiry';});
+gsForm.addEventListener('submit',async e=>{
+ e.preventDefault();
+ gsStatus.className='';gsStatus.textContent='';
+ if(gsForm.action.includes('YOUR_FORM_ID')){gsStatus.className='err';gsStatus.textContent='The enquiry form is not connected yet. Please use WhatsApp or email while the form connection is being completed.';return;}
+ gsBtn.disabled=true;gsBtn.textContent='Sending...';
+ try{
+  const r=await fetch(gsForm.action,{method:'POST',body:new FormData(gsForm),headers:{Accept:'application/json'}});
+  if(!r.ok)throw new Error('Submission failed');
+  gsForm.reset();
+  gsStatus.className='ok gs-success';
+  gsStatus.innerHTML='<span class="gs-success-icon" aria-hidden="true">✓</span><span><strong>Your submission was successful.</strong><br>Thank you. We have received your enquiry and will be in touch soon.</span>';
+  gsStatus.scrollIntoView({behavior:'smooth',block:'nearest'});
+ }catch(_){
+  gsStatus.className='err';gsStatus.textContent='Something went wrong. Please message us on WhatsApp or email instead.';
+ }
+ gsBtn.disabled=false;gsBtn.textContent='Send my enquiry';
+});
 </script>
 </body></html>

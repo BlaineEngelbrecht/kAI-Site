@@ -147,7 +147,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   }
   .nav-links.is-open{ display: flex; }
   .nav-links a{ width: 100%; padding: 12px 0; border-bottom: 1px solid var(--line-on-dark); }
-  .nav-cta{ margin-top: 8px; text-align: center; }
+  .nav-cta{ margin-top: 8px; text-align: center; width: auto !important; align-self: center; display: inline-block; padding: 10px 18px !important; }
 }
 
 /* Hero */
@@ -506,3 +506,5 @@ ul{ margin: 0; padding: 0; list-style: none; }
   .client-case-thumbs{grid-template-columns:1fr}
   .client-case-thumbs img{height:auto;max-height:480px;object-fit:contain}
 }
+
+.hero-contact{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:18px;font-size:14px}.hero-contact a{color:rgba(255,255,255,.86);text-decoration:none}.hero-contact a:hover{text-decoration:underline}
